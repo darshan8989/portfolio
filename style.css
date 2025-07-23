@@ -1,0 +1,514 @@
+/* ---- style.css --- */
+
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  overflow-y: auto;
+}
+
+html {
+  /* ✅ Smooth scroll behavior for anchor links */
+  scroll-behavior: smooth;
+  /* ✅ Ensures content isn't hidden behind the fixed navbar on scroll */
+  scroll-padding-top: 70px; 
+}
+
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  top: 0;
+  left: 0;
+  z-index: 0
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  box-sizing: border-box;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 11; /* Ensure it's above nav links */
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #00ffd5;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+.logo:hover{
+  color: #ccc;
+}
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #00ffd5;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #00ffd5;
+}
+
+/* hero section css  */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: black;
+  
+}
+
+.hero-content {
+  color: #ffffff;
+  max-width: 800px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  
+  
+}
+
+.hero-content h1 {
+  font-size: 3.9rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: #00ffd5;
+  text-shadow: 0 0 10px #00ffd5;
+}
+
+.hero-content .typewriter-text {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  color: #ccc;
+  height: 2.2rem; /* Give it a fixed height to prevent layout shift */
+}
+
+.btn {
+  padding: 12px 30px;
+  background: #00ffd5;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #00c3a5;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00ffd5;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: #00ffd5;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Main content sections styling */
+section {
+  padding: 100px 40px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* skill section  */
+.skills-section {
+  background: #0b0b0b;
+  color: #fff;
+  text-align: center;
+}
+
+.skills-section h2,
+.about-section h2,
+.contact-section h2 {
+  font-size: 2.5rem;
+margin-top: -80px;
+  color: #00ffd5;
+  text-shadow: 0 0 10px #00ffd5;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,255,213,0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,255,213,0.3);
+}
+
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.skill-card span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.bar {
+  background: #222;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ffd5, #00bfa6);
+  color: #000;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+  box-sizing: border-box;
+  transition: width 2s ease-in-out;
+}
+
+/* About css */
+.about-section {
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 200px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin-left: 100px;
+  margin-top: -0.5px;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-top: -40px;
+  object-fit: cover;
+  border: 4px solid #00ffd5;
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.4);
+}
+
+.about-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.highlight {
+  color: #00ffd5;
+  font-weight: bold;
+}
+
+/* contact us  */
+.contact-section {
+  background-color: #0b0b0b;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-subtext {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background: #1a1a1a;
+  color: #fff;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #00ffd5;
+  background: #111;
+  outline: none;
+}
+
+#formStatus {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00ffd5;
+  transition: 0.3s ease;
+  min-height: 1.2rem;
+}
+
+/* footer css  */
+.footer {
+  background-color: #000;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-socials a {
+  color: #00ffd5;
+  font-size: 1.4rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+  color: #00c3a5;
+}
+
+
+/*
+=========================================
+      MEDIA QUERIES (RESPONSIVE)
+=========================================
+*/
+
+/* --- TABLETS AND BELOW (e.g., iPads) --- */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    
+    /* Hide menu by default */
+    clip-path: circle(0% at 100% 0);
+    transition: clip-path 0.5s ease-in-out;
+  }
+
+  .nav-links.open {
+    /* Show menu when open */
+    clip-path: circle(150% at 100% 0);
+  }
+  
+  .nav-links li a {
+    font-size: 1.5rem;
+  }
+
+  /* --- Section Adjustments for Tablet --- */
+  section {
+    padding: 80px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content .typewriter-text {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  /* Stack about section */
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .about-text {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+
+/* --- MOBILE PHONES --- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem; /* Further reduce font size for small screens */
+  }
+
+  .hero-content .typewriter-text {
+    font-size: 1.2rem;
+    height: 1.5rem;
+  }
+
+  .skills-section h2,
+  .about-section h2,
+  .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack skill cards on one column */
+  }
+
+  .about-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
